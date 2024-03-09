@@ -38,7 +38,7 @@ function adjustImagePositions() {
 
     const windowWidth = gallery.offsetWidth
     const width = 290 //Todas las columnas son iguales y las imagenes tienen el ancho de la columna
-    const columns = Math.floor(windowWidth / 320)
+    const columns = Math.floor(windowWidth / 320) || 1
     const whiteSpace = windowWidth - columns * width  //espacio desperdiciado
 
     const topColumn = Array.from({ length: columns }, () => 0) //Inicializo las columnas en 0, para luego ir sumando por columna
@@ -70,9 +70,11 @@ const openCarrousel = (index) => {
     currentImageIndex = index
     carrousel.style.display = "block"
     currentImage.src = imageArray[index].children[0].src
+    document.body.style.overflow = "hidden" //Bloqueo el scroll
 }
 const closeGallery = () => {
     document.getElementById('myModal').style.display = 'none';
+    document.body.style.overflow = "visible" //desbloqueo el scroll
 }
 
 const prevImage = (index) => {
