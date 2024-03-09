@@ -1,0 +1,99 @@
+#gallery {
+    width: 90%;
+    max-width: 1900px;
+    min-height: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+#gallery div {
+    overflow: hidden;
+    position: absolute;
+    cursor: crosshair;
+}
+
+#gallery img {
+    object-fit: cover;
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+#gallery img:hover {
+    transform: scale(1.15);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+.close {
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+button {
+    background: none;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 60px;
+}
+#prevImgButton {
+    position: fixed;
+    top: 30%;
+}
+#nextImgButton {
+    position: fixed;
+    top: 30%;
+    right: 0;
+}
+#nextImgButton div {
+    width: 3px;
+    height: 16px;
+    background-color: #fff;
+    position: absolute;
+}
+#nextImgButton .topPart {
+    top: 50%;
+    right: 30%;
+    transform: rotateZ(45deg);
+}
+#nextImgButton .downPart {
+    top: 35%;
+    right: 30%;
+    transform: rotateZ(-45deg);
+}
+#prevImgButton div {
+    width: 3px;
+    height: 16px;
+    background-color: #fff;
+    position: absolute;
+}
+#prevImgButton .topPart {
+    top: 50%;
+    right: 30%;
+    transform: rotateZ(-45deg);
+}
+#prevImgButton .downPart {
+    top: 35%;
+    right: 30%;
+    transform: rotateZ(45deg);
+}
